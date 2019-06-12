@@ -1,13 +1,14 @@
 # build OpenMS lib and tool
 # 
 #
+FROM ubuntu:18.04
+
 LABEL ch.hesge="HESSO - HEPIA - ITI" \
       description="OpenMS environment to build and execute proteomic workflow (mzML files)" \
       authors="Sebastien Chassot - sebastien.chassot@hesge.ch" \
       version="1.0" \
       ch.hesge.release-date="2019-06-12"
 
-FROM ubuntu:18.04
 
 ENV LD_LIBRARY_PATH="/usr/include/OpenMS/lib:$LD_LIBRARY_PATH"
 ENV PATH="$PATH:/usr/local/OpenMS/bin"
