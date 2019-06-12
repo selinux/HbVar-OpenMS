@@ -25,14 +25,26 @@ RUN apt-get -y update && \
     libtool \
     make \
     git \
-    libeigen3-dev libsqlite3-dev libwildmagic-dev libboost-random1.62-dev \
-    libboost-regex1.62-dev libboost-iostreams1.62-dev libboost-date-time1.62-dev libboost-math1.62-dev \
-    libxerces-c-dev libglpk-dev zlib1g-dev libsvm-dev libbz2-dev seqan-dev coinor-libcoinmp-dev libhdf5-dev && \
+    libeigen3-dev \
+    libsqlite3-dev \
+    libwildmagic-dev \
+    libboost-random1.62-dev \
+    libboost-regex1.62-dev \
+    libboost-iostreams1.62-dev \
+    libboost-date-time1.62-dev \
+    libboost-math1.62-dev \
+    libxerces-c-dev \
+    libglpk-dev \
+    zlib1g-dev \
+    libsvm-dev \
+    libbz2-dev \
+    seqan-dev \
+    coinor-libcoinmp-dev \
+    libhdf5-dev && \
     rm -rf /var/lib/apt/lists/*
 
 # clone OpenMS repo with submodules
-RUN git clone -b 'Release2.4.0' --single-branch --depth 1 https://github.com/OpenMS/OpenMS.git /OpenMS && \
-    cd /OpenMS # && git submodule update --init contrib
+RUN git clone -b 'Release2.4.0' --single-branch --depth 1 https://github.com/OpenMS/OpenMS.git /OpenMS
 
 # build and clean OpenMS
 RUN mkdir /openms-build && cd /openms-build && \
