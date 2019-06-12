@@ -47,7 +47,8 @@ RUN mkdir /openms-build && cd /openms-build && \
     /OpenMS && \
     make OpenMS && \
     make && \
-    make install #&& make clean
+    make install && \
+    make clean
 
 RUN mkdir /src
 WORKDIR /src
